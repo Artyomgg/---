@@ -1,33 +1,21 @@
 // src/components/AboutSection.jsx
-import { useEffect, useState } from 'react'
-import { fetchAboutText } from '../services/googleSheets'
 
 function AboutSection() {
-	const [aboutText, setAboutText] = useState({})
-	const [loading, setLoading] = useState(true)
-
-	useEffect(() => {
-		const loadAbout = async () => {
-			const data = await fetchAboutText()
-			setAboutText(data)
-			setLoading(false)
-		}
-		loadAbout()
-	}, [])
-
-	if (loading) {
-		return (
-			<div className='section about-section'>
-				<h2>О военно-патриотическом клубе "Мужество"</h2>
-				<div className='loading-spinner'>Загрузка...</div>
-			</div>
-		)
-	}
-
 	return (
 		<div className='section about-section'>
 			<h2>О военно-патриотическом клубе "Мужество"</h2>
-			<p>{aboutText.main_text || 'Информация о клубе будет добавлена позже.'}</p>
+			<p>
+				ВПК «Мужество» создан <strong>2 ноября 2022 года</strong> по инициативе управления по
+				образованию администрации Октябрьского района г.Минска при содействии командующего силами
+				специальных операций генерал-майора Денисенко В.И. на базе 742 полевого узла связи сил
+				специальных операций (в/ч 19310) и ГУО «Средняя школа №30 г.Минска».
+			</p>
+			<p>
+				Шеврон клуба объединяет символы двух силовых ведомств: <strong>Рысь</strong> (3-я отдельная
+				бригада спецназа внутренних войск) и <strong>крылья с парашютом</strong> (Силы специальных
+				операций), а молнии означают связь между ведомствами и основное назначение 742-го узла
+				связи.
+			</p>
 
 			<div className='features'>
 				<div className='feature'>
@@ -39,14 +27,15 @@ function AboutSection() {
 					<p>Изучение Вооружённых сил РБ, строевая подготовка, воинские звания.</p>
 				</div>
 				<div className='feature'>
-					<h3>💪 Спорт и выживание</h3>
-					<p>Кроссфит, турники, полоса препятствий, ориентирование на местности.</p>
+					<h3>Правила приема</h3>
+					<p>
+						Возраст: от 10 до 17 лет.
+						<br />
+						Медицинская справка об отсутствии противопоказаний.
+						<br />
+						Согласие родителей.
+					</p>
 				</div>
-			</div>
-
-			<div className='requirements-section'>
-				<h3>Правила приема</h3>
-				<p>{aboutText.requirements || 'Требования будут добавлены позже.'}</p>
 			</div>
 		</div>
 	)
