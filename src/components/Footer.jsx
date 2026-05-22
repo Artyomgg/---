@@ -6,24 +6,40 @@ function Footer() {
 		<footer className='footer'>
 			<div className='container'>
 				<div className='footer-grid'>
-					<div>
-						<h4>Контакты</h4>
-						<p>📞 {contacts.phone}</p>
-						<p>✉️ {contacts.email}</p>
-						<p>📍 {contacts.address}</p>
+					<div className='footer-col'>
+						<h4>📞 Контакты</h4>
+						<p>
+							<a href={`tel:${String(contacts.phone || '').replace(/\s/g, '')}`}>
+								{contacts.phone}
+							</a>
+						</p>
+						<p>
+							<a href={`mailto:${contacts.email}`}>{contacts.email}</a>
+						</p>
+						<p>{contacts.address}</p>
 					</div>
-					<div>
-						<h4>Соцсети</h4>
-						<p>{contacts.socials}</p>
-					</div>
-					<div>
-						<h4>Режим работы</h4>
+					{/* <div className='footer-col'>
+						<h4>📱 Соцсети</h4>
+						<div className='social-links'>
+							<a href='https://t.me/your_telegram' target='_blank' rel='noreferrer'>
+								Telegram
+							</a>
+							<a href='https://vk.com/your_vk' target='_blank' rel='noreferrer'>
+								VK
+							</a>
+							<a href='https://www.instagram.com/your_instagram' target='_blank' rel='noreferrer'>
+								Instagram
+							</a>
+						</div>
+					</div> */}
+					<div className='footer-col'>
+						<h4>⏰ Режим работы</h4>
 						<p>{contacts.schedule}</p>
 					</div>
 				</div>
 				<div className='copyright'>
-					© 2026 Военно-патриотический клуб "Мужество" (Октябрьский район, Минск). Все права
-					защищены.
+					© {new Date().getFullYear()} Военно-патриотический клуб "Мужество" (Октябрьский район,
+					Минск). Все права защищены.
 				</div>
 			</div>
 		</footer>

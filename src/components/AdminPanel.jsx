@@ -48,6 +48,7 @@ function AdminPanel() {
 						<a
 							href='https://docs.google.com/spreadsheets/d/15PaMzlftCVNP3OkxxOcEZ5u1B2AhLIMpYudf6eYFbuo/edit'
 							target='_blank'
+							rel='noreferrer'
 						>
 							Открыть таблицу
 						</a>
@@ -76,6 +77,12 @@ function AdminPanel() {
 						onClick={() => setActiveTab('about')}
 					>
 						📝 О клубе
+					</button>
+					<button
+						className={activeTab === 'help' ? 'active' : ''}
+						onClick={() => setActiveTab('help')}
+					>
+						❓ Инструкция
 					</button>
 				</div>
 
@@ -126,6 +133,110 @@ function AdminPanel() {
 						<p>
 							<strong>Требования:</strong> {aboutText.requirements || 'Не заполнено'}
 						</p>
+					</div>
+				)}
+
+				{activeTab === 'help' && (
+					<div className='admin-section'>
+						<h2>📖 Инструкция по управлению сайтом</h2>
+						<div className='help-content'>
+							<h3>1. Как редактировать контент?</h3>
+							<p>
+								Всё редактируется через <strong>Google Таблицу</strong> (ссылка выше).
+							</p>
+							<ul>
+								<li>
+									<strong>Лист "news"</strong> — новости. Колонки:{' '}
+									<code>id, title, date, desc, imageUrl</code>.
+								</li>
+								<li>
+									<strong>Лист "gallery"</strong> — фотогалерея. Колонки:{' '}
+									<code>id, src, title, category</code>.
+								</li>
+								<li>
+									<strong>Лист "about_text"</strong> — текстовые блоки. Колонки:{' '}
+									<code>section, content</code>.
+								</li>
+							</ul>
+
+							<h3>2. Как добавить новость?</h3>
+							<ol>
+								<li>
+									Открой лист <strong>news</strong> в таблице.
+								</li>
+								<li>Добавь новую строку.</li>
+								<li>
+									Заполни: <code>id</code> (по порядку), <code>title</code> (заголовок),{' '}
+									<code>date</code> (дата), <code>desc</code> (текст), <code>imageUrl</code> (ссылка
+									на фото – необязательно).
+								</li>
+								<li>
+									Нажми <strong>⟳ Обновить</strong> на этой странице.
+								</li>
+							</ol>
+
+							<h3>3. Как добавить фото в галерею?</h3>
+							<ol>
+								<li>
+									Загрузи фото в <strong>Google Диск</strong> и открой доступ "Все, у кого есть
+									ссылка".
+								</li>
+								<li>
+									Скопируй <strong>ID файла</strong> (часть ссылки между <code>/d/</code> и{' '}
+									<code>/view</code>).
+								</li>
+								<li>
+									Составь прямую ссылку:{' '}
+									<code>https://drive.google.com/uc?export=view&amp;id=ТВОЙ_ID</code>.
+								</li>
+								<li>
+									Или используй <strong>ImgBB</strong> – загрузи фото, скопируй "Direct link".
+								</li>
+								<li>
+									Вставь эту ссылку в колонку <code>src</code> на листе <strong>gallery</strong>.
+								</li>
+								<li>
+									Укажи <code>title</code> (подпись) и <code>category</code> (например,{' '}
+									<code>training</code>, <code>shooting</code>).
+								</li>
+								<li>
+									Нажми <strong>⟳ Обновить</strong>.
+								</li>
+							</ol>
+
+							<h3>4. Как изменить текст "О клубе"?</h3>
+							<ol>
+								<li>
+									На листе <strong>about_text</strong> найди строки с <code>main_text</code> и{' '}
+									<code>requirements</code>.
+								</li>
+								<li>
+									Измени текст в колонке <code>content</code>.
+								</li>
+								<li>
+									Нажми <strong>⟳ Обновить</strong>.
+								</li>
+							</ol>
+
+							<h3>5. Как обновить сайт после изменений?</h3>
+							<p>
+								Нажми кнопку <strong>⟳ Обновить</strong> на этой странице – данные подгрузятся
+								заново. Обычно изменения видны сразу.
+							</p>
+
+							<h3>⚠️ Важно</h3>
+							<ul>
+								<li>Не удаляй и не меняй заголовки колонок (первая строка).</li>
+								<li>
+									Для фото используй только <strong>прямые ссылки</strong> (заканчиваются на{' '}
+									<code>.jpg</code>, <code>.png</code> или содержат <code>uc?export=view</code>).
+								</li>
+								<li>
+									Если фото не отображается – проверь доступ к файлу (для Google Диска – "Все, у
+									кого есть ссылка").
+								</li>
+							</ul>
+						</div>
 					</div>
 				)}
 			</div>

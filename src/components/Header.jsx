@@ -9,7 +9,6 @@ function Header() {
 		{ path: '/', label: 'О клубе' },
 		{ path: '/news', label: 'Новости' },
 		{ path: '/rules', label: 'Правила и документы' },
-		{ path: '/register', label: '📝 Запись' },
 	]
 
 	return (

@@ -22,7 +22,7 @@ function App() {
 				<Route path='/register' element={<RegisterPage />} />
 				<Route path='/admin' element={<AdminPanel />} />
 			</Routes>
-			<Footer />
+			<Footer/>
 		</div>
 	)
 }

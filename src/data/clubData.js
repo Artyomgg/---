@@ -15,7 +15,7 @@ export const contacts = {
 	// phone: '+375 (29) 123-45-67',
 	// email: 'muzhestvo@octobrrb.by',
 	address: 'ГУО "Средняя школа №30 г. Минска" г. Минск, ул. Жуковского, 11',
-	schedule: 'Вторник/Четверг/Суббота: 18:00 - 21:00',
+	schedule: 'Понедельник - Пятница с 8:30 до 17:00',
 	// socials: '🔹 Telegram | ВКонтакте | Instagram',
 }
 
