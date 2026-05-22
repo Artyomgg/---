@@ -15,23 +15,18 @@ function NewsSection() {
 		loadNews()
 	}, [])
 
-	if (loading) {
+	if (loading) return <div className='loading-spinner'>Загрузка новостей...</div>
+	if (news.length === 0)
 		return (
 			<div className='section news-section'>
 				<h2>Новости клуба</h2>
-				<div className='loading-spinner'>Загрузка новостей...</div>
+				<div className='empty-news'>
+					<span className='empty-icon'>📰</span>
+					<p>Новости появятся позже</p>
+					<small>Следите за обновлениями</small>
+				</div>
 			</div>
 		)
-	}
-
-	if (news.length === 0) {
-		return (
-			<div className='section news-section'>
-				<h2>Новости клуба</h2>
-				<p>Новости появятся здесь после добавления в Google Таблицу</p>
-			</div>
-		)
-	}
 
 	return (
 		<div className='section news-section'>
