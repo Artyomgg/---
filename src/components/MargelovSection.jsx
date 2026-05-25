@@ -5,6 +5,18 @@ function MargelovSection() {
 		<div className='margelov-section'>
 			<div className='container'>
 				<div className='margelov-card'>
+					<div className='margelov-image'>
+						<div className='margelov-image-wrapper'>
+							<img
+								src='/img/Маргелов.jpg'
+								alt='Генерал армии Василий Филиппович Маргелов'
+								className='margelov-photo'
+							/>
+							<div className='margelov-image-overlay'>
+								<span>«Никто, кроме нас!»</span>
+							</div>
+						</div>
+					</div>
 					<div className='margelov-quote'>
 						<span className='quote-icon'>“</span>
 						<p>
@@ -22,9 +34,9 @@ function MargelovSection() {
 							подвигу.
 						</p>
 						<div className='margelov-signs'>
-							<span>⭐ Голубой берет</span>
-							<span>⭐ Тельняшка</span>
-							<span>⭐ Крылатая гвардия</span>
+							<span>🎖️ Голубой берет</span>
+							<span>⚓ Тельняшка</span>
+							<span>🪽 Крылатая гвардия</span>
 						</div>
 					</div>
 				</div>

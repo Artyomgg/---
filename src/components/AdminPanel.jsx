@@ -32,7 +32,6 @@ function AdminPanel() {
 		return (
 			<div className='admin-loading'>
 				<div className='spinner'></div>
-				<p>Загрузка данных...</p>
 			</div>
 		)
 	}

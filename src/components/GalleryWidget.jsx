@@ -1,9 +1,9 @@
-// src/components/Gallery.jsx
+// src/components/GalleryWidget.jsx
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { fetchGallery } from '../services/googleSheets'
 
-function Gallery() {
+function GalleryWidget() {
 	const [images, setImages] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [selected, setSelected] = useState(null)
@@ -11,7 +11,7 @@ function Gallery() {
 	useEffect(() => {
 		const load = async () => {
 			const data = await fetchGallery()
-			// Берём только первые 6 фото для главной страницы
+			// Показываем только 6 фото на виджете
 			setImages(data.slice(0, 6))
 			setLoading(false)
 		}
@@ -22,26 +22,22 @@ function Gallery() {
 	if (images.length === 0) return null
 
 	return (
-		<div className='gallery-section home-gallery'>
-			<div className='container'>
-				<h2>Фотогалерея</h2>
-				<div className='gallery-grid'>
-					{images.map(img => (
-						<div key={img.id} className='gallery-item' onClick={() => setSelected(img)}>
-							<img src={img.src} alt={img.title} loading='lazy' />
-							<div className='gallery-overlay'>
-								<span>{img.title}</span>
-							</div>
+		<div className='gallery-widget'>
+			<div className='gallery-widget-header'>
+				<h3>Фотогалерея</h3>
+				<Link to='/gallery' className='gallery-widget-link'>
+					Все фото →
+				</Link>
+			</div>
+			<div className='gallery-widget-grid'>
+				{images.map(img => (
+					<div key={img.id} className='gallery-widget-item' onClick={() => setSelected(img)}>
+						<img src={img.src} alt={img.title} loading='lazy' />
+						<div className='gallery-widget-overlay'>
+							<span className='gallery-widget-title'>{img.title}</span>
 						</div>
-					))}
-				</div>
-
-				{/* Кнопка перехода на полную галерею */}
-				<div className='gallery-view-all'>
-					<Link to='/gallery' className='btn-view-all'>
-						Смотреть все фото →
-					</Link>
-				</div>
+					</div>
+				))}
 			</div>
 
 			{/* Модальное окно */}
@@ -52,7 +48,7 @@ function Gallery() {
 							✕
 						</button>
 						<img src={selected.src} alt={selected.title} />
-						<h3>{selected.title}</h3>
+						<h3 className='modal-title'>{selected.title}</h3>
 					</div>
 				</div>
 			)}
@@ -60,4 +56,4 @@ function Gallery() {
 	)
 }
 
-export default Gallery
+export default GalleryWidget

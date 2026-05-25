@@ -1,11 +1,11 @@
 // src/pages/HomePage.jsx
 import AboutSection from '../components/AboutSection'
 import EventsAndAchievements from '../components/EventsAndAchievements'
-import Gallery from '../components/Gallery'
+import GalleryWidget from '../components/GalleryWidget'
 import Hero from '../components/Hero'
 import LogosSection from '../components/LogosSection'
 import MargelovSection from '../components/MargelovSection'
-import NewsSection from '../components/NewsSection'
+import NewsWidget from '../components/NewsWidget'
 import StatsCounter from '../components/StatsCounter'
 import TrainingProgram from '../components/TrainingProgram'
 
@@ -14,12 +14,25 @@ function HomePage() {
 		<>
 			<Hero />
 			<StatsCounter />
-			<MargelovSection />
 			<main className='main-content container'>
 				<AboutSection />
 			</main>
-			<NewsSection />
-			<Gallery />
+
+			{/* Виджет новостей */}
+			<section className='widget-section'>
+				<div className='container'>
+					<NewsWidget />
+				</div>
+			</section>
+
+			{/* Виджет галереи */}
+			<section className='widget-section'>
+				<div className='container'>
+					<GalleryWidget />
+				</div>
+			</section>
+
+			<MargelovSection />
 			<TrainingProgram />
 			<EventsAndAchievements />
 			<LogosSection />

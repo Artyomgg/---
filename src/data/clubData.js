@@ -1,14 +1,11 @@
 // src/data/clubData.js
 
-export const newsItems = [
-
-]
+export const newsItems = []
 
 export const documents = [
-	{ name: "Устав ВПК 'Мужество'", link: '#' },
-	{ name: "Положение о соревнованиях 'Витязь'", link: '#' },
-	{ name: 'Правила приема и техника безопасности', link: '#' },
-	{ name: 'Программа обучения на 2025 год', link: '#' },
+	{ name: "Заявление ВПК", link: '/documents/ЗАЯВЛЕНИЕ ВПК.pdf' },
+	{ name: "Индивидуальная анкета", link: '/documents/ИНДИВИДУАЛЬНАЯ АНКЕТА.pdf' },
+	{ name: 'Клятва ВПК "Мужество"', link: '/documents/КЛЯТВА.pdf' },
 ]
 
 export const contacts = {
@@ -23,5 +20,7 @@ export const contacts = {
 export const logos = {
 	club: '/img/1000003261_removebg_preview.png', // логотип ВПК Мужество
 	school: '/img/IMG-5fb2e8a42027544bb94ff29c6d392cab-V.jpg', // логотип школы №30 (добавь свой файл)
-	army: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/XCs3K.jpg/330px-XCs3K.jpg',
+	army: '/img/пус-742.png',
+	vch3214:
+		'https://3214.by/uploads/posts/2021-07/thumbs/1625819151_bff51234590f514966cde211216d34ee.png',
 }
