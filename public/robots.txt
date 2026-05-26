@@ -1,0 +1,6 @@
+# public/robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Sitemap: https://vpk-muzhestvo.vercel.app/sitemap.xml
