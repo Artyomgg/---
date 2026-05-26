@@ -9,7 +9,7 @@ export const documents = [
 ]
 
 export const contacts = {
-	// phone: '+375 (29) 123-45-67',
+	phone: '8017-240-20-10',
 	// email: 'muzhestvo@octobrrb.by',
 	address: 'ГУО "Средняя школа №30 г. Минска" г. Минск, ул. Жуковского, 11',
 	schedule: 'Понедельник - Пятница с 8:30 до 17:00',

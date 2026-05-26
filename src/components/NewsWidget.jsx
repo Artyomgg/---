@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import { fetchNews } from '../services/googleSheets'
+import { NewsSkeleton } from './Skeleton'
 
 function NewsWidget() {
 	const [news, setNews] = useState([])
@@ -17,7 +18,37 @@ function NewsWidget() {
 		loadNews()
 	}, [])
 
-	if (loading) return <div className='loading-spinner'>Загрузка новостей...</div>
+	if (loading) {
+		return (
+			<div className='news-widget'>
+				<div className='news-widget-header'>
+					<h3>Последние новости</h3>
+					<Link to='/news' className='news-widget-link'>
+						Все новости →
+					</Link>
+				</div>
+				<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+					{Array(3)
+						.fill()
+						.map((_, i) => (
+							<div key={i} style={{ display: 'flex', gap: '20px' }}>
+								<div
+									className='skeleton-image'
+									style={{ width: '100px', height: '100px', borderRadius: '16px' }}
+								></div>
+								<div style={{ flex: 1 }}>
+									<div
+										className='skeleton-title'
+										style={{ width: '60%', height: '16px', marginBottom: '8px' }}
+									></div>
+									<div className='skeleton-text' style={{ width: '90%', height: '12px' }}></div>
+								</div>
+							</div>
+						))}
+				</div>
+			</div>
+		)
+	}
 
 	if (news.length === 0) {
 		return (

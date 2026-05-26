@@ -1,39 +1,39 @@
 // src/services/googleSheets.js
-// Подключение к Google Apps Script
 
 const API_URL =
 	'https://script.google.com/macros/s/AKfycbwhP6XqFfTFtbmbD5uBAklLHTd5jlPTaIsQHifU8YxE04epCdlW7qhYHUciWjV7DcmSbQ/exec'
 
-// Добавляем параметр кэша для принудительного обновления
 const getUrl = () => `${API_URL}?_=${Date.now()}`
 
-// Получение новостей
+// Получение новостей (новые первыми)
 export const fetchNews = async () => {
 	try {
 		const response = await fetch(getUrl())
 		if (!response.ok) throw new Error('Ошибка загрузки')
 		const data = await response.json()
-		return data.news || []
+		// РАЗВОРАЧИВАЕМ МАССИВ — последние новости в таблице будут первыми на сайте
+		return (data.news || []).reverse()
 	} catch (error) {
 		console.error('Ошибка загрузки новостей:', error)
 		return []
 	}
 }
 
-// Получение галереи
+// Получение галереи (новые фото первыми)
 export const fetchGallery = async () => {
 	try {
 		const response = await fetch(getUrl())
 		if (!response.ok) throw new Error('Ошибка загрузки')
 		const data = await response.json()
-		return data.gallery || []
+		// РАЗВОРАЧИВАЕМ МАССИВ — последние фото в таблице будут первыми на сайте
+		return (data.gallery || []).reverse()
 	} catch (error) {
 		console.error('Ошибка загрузки галереи:', error)
 		return []
 	}
 }
 
-// Получение текста о клубе
+// Текст о клубе (порядок не важен)
 export const fetchAboutText = async () => {
 	try {
 		const response = await fetch(getUrl())

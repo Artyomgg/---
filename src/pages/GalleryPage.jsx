@@ -1,5 +1,6 @@
 // src/pages/GalleryPage.jsx
 import { useEffect, useState } from 'react'
+import { GallerySkeletonGrid } from '../components/Skeleton'
 import { fetchGallery } from '../services/googleSheets'
 
 function GalleryPage() {
@@ -11,6 +12,7 @@ function GalleryPage() {
 
 	useEffect(() => {
 		const loadGallery = async () => {
+			setLoading(true)
 			const data = await fetchGallery()
 			setImages(data)
 			setFilteredImages(data)
@@ -30,11 +32,16 @@ function GalleryPage() {
 		}
 	}, [searchQuery, images])
 
+	// Показываем скелетоны во время загрузки
 	if (loading) {
 		return (
 			<div className='gallery-page'>
 				<div className='container'>
-					<div className='loading-spinner'>Загрузка галереи...</div>
+					<div className='gallery-hero'>
+						<h1>Фотогалерея</h1>
+						<p>Моменты из жизни нашего клуба</p>
+					</div>
+					<GallerySkeletonGrid count={6} />
 				</div>
 			</div>
 		)

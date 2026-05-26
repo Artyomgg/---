@@ -18,20 +18,17 @@ function Footer() {
 						</p>
 						<p>{contacts.address}</p>
 					</div>
-					{/* <div className='footer-col'>
+					<div className='footer-col'>
 						<h4>📱 Соцсети</h4>
 						<div className='social-links'>
-							<a href='https://t.me/your_telegram' target='_blank' rel='noreferrer'>
+							<a href='https://t.me/shool30_info' target='_blank' rel='noreferrer'>
 								Telegram
 							</a>
-							<a href='https://vk.com/your_vk' target='_blank' rel='noreferrer'>
-								VK
-							</a>
-							<a href='https://www.instagram.com/your_instagram' target='_blank' rel='noreferrer'>
+							{/* <a href='https://www.instagram.com/your_instagram' target='_blank' rel='noreferrer'>
 								Instagram
-							</a>
+							</a> */}
 						</div>
-					</div> */}
+					</div>
 					<div className='footer-col'>
 						<h4>⏰ Режим работы</h4>
 						<p>{contacts.schedule}</p>

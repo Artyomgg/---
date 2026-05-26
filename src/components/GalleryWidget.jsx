@@ -1,6 +1,7 @@
 // src/components/GalleryWidget.jsx
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
+import { GallerySkeletonGrid } from './Skeleton'
 import { fetchGallery } from '../services/googleSheets'
 
 function GalleryWidget() {
@@ -18,7 +19,19 @@ function GalleryWidget() {
 		load()
 	}, [])
 
-	if (loading) return <div className='loading-spinner'>Загрузка галереи...</div>
+	if (loading) {
+		return (
+			<div className='gallery-widget'>
+				<div className='gallery-widget-header'>
+					<h3>Фотогалерея</h3>
+					<Link to='/gallery' className='gallery-widget-link'>
+						Все фото →
+					</Link>
+				</div>
+				<GallerySkeletonGrid count={4} />
+			</div>
+		)
+	}
 	if (images.length === 0) return null
 
 	return (
