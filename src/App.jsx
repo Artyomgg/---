@@ -1,6 +1,5 @@
 // src/App.jsx
 import { Route, Routes } from 'react-router'
-import './styles/App.css'
 import AdminPanel from './components/AdminPanel'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -8,8 +7,8 @@ import ScrollToTop from './components/ScrollToTop'
 import GalleryPage from './pages/GalleryPage'
 import HomePage from './pages/HomePage'
 import NewsPage from './pages/NewsPage'
-import RegisterPage from './pages/RegisterPage'
 import RulesPage from './pages/RulesPage'
+import './styles/App.css'
 
 function App() {
 	return (

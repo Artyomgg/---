@@ -16,26 +16,6 @@ function Header() {
 		return () => window.removeEventListener('scroll', handleScroll)
 	}, [])
 
-	// Блокируем скролл при открытом меню
-	useEffect(() => {
-		if (mobileMenuOpen) {
-			document.body.style.overflow = 'hidden'
-		} else {
-			document.body.style.overflow = 'unset'
-		}
-	}, [mobileMenuOpen])
-
-	// Закрываем меню при ресайзе окна
-	useEffect(() => {
-		const handleResize = () => {
-			if (window.innerWidth > 768 && mobileMenuOpen) {
-				setMobileMenuOpen(false)
-			}
-		}
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
-	}, [mobileMenuOpen])
-
 	const navItems = [
 		{ path: '/', label: 'О клубе' },
 		{ path: '/news', label: 'Новости' },
@@ -45,8 +25,8 @@ function Header() {
 
 	return (
 		<header className={`header ${scrolled ? 'scrolled' : ''}`}>
-			<div className='header-container'>
-				<Link to='/' className='logo' onClick={() => setMobileMenuOpen(false)}>
+			<div className='container header-container'>
+				<Link to='/' className='logo'>
 					<span className='logo-icon'>
 						<img src='/img/1000003261_removebg_preview.png' alt='Логотип ВПК Мужество' />
 					</span>
@@ -56,16 +36,17 @@ function Header() {
 					</div>
 				</Link>
 
+				{/* Кнопка бургер-меню для мобилок */}
 				<button
 					className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`}
 					onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-					aria-label='Меню'
 				>
 					<span></span>
 					<span></span>
 					<span></span>
 				</button>
 
+				{/* Навигация */}
 				<nav className={`nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
 					{navItems.map(item => (
 						<Link
