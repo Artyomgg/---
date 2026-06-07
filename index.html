@@ -3,15 +3,12 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/x-icon" href="/vpk-logo.png" />
-  <link rel="icon" href="vpk-logo.png" />
-  <link rel="apple-touch-icon" href="vpk-logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <!-- ===== SEO БАЗОВЫЕ МЕТА-ТЕГИ ===== -->
+  <!-- ===== БАЗОВЫЕ МЕТА-ТЕГИ ===== -->
   <title>ВПК "Мужество" — военно-патриотический клуб в Минске</title>
   <meta name="description"
-    content="ВПК «Мужество» — военно-патриотический клуб в Октябрьском районе Минска. Тактическая подготовка, сборка/разборка оружия, БПЛА, тренажёры, стрельба. Присоединяйся!" />
+    content="ВПК «Мужество» в Октябрьском районе Минска: тактическая подготовка, сборка/разборка оружия, БПЛА, тренажёры, стрельба. Воспитываем защитников Отечества с 2022 года. Присоединяйся!" />
   <meta name="keywords"
     content="ВПК Мужество, военно-патриотический клуб Минск, патриотическое воспитание, тактическая подготовка, сборка автомата, БПЛА, стрельба, Маргелов, десантники" />
   <meta name="author" content="ВПК 'Мужество'" />
@@ -23,9 +20,11 @@
   <meta property="og:title" content="ВПК 'Мужество' — военно-патриотический клуб в Минске" />
   <meta property="og:description"
     content="Воспитываем защитников Отечества. Тактическая подготовка, стрельба, БПЛА, тренажёры и традиции ВДВ." />
+  <!-- ВАЖНО: замени og-image.jpg на реальное изображение 1200×630px с логотипом и названием клуба -->
   <meta property="og:image" content="https://vpk-muzhestvo.vercel.app/vpk-logo.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Логотип и название ВПК 'Мужество'" />
   <meta property="og:url" content="https://vpk-muzhestvo.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ru_RU" />
@@ -35,7 +34,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ВПК 'Мужество' — военно-патриотический клуб в Минске" />
   <meta name="twitter:description" content="Воспитываем защитников Отечества. Присоединяйся к нам!" />
-  <meta name="twitter:image" content="https://vpk-muzhestvo.vercel.app/vpk-logo.png" />
+  <meta name="twitter:image" content="https://vpk-muzhestvo.vercel.app/og-image.jpg" />
 
   <!-- ===== ДОПОЛНИТЕЛЬНЫЕ МЕТА-ТЕГИ ===== -->
   <meta name="format-detection" content="telephone=no" />
@@ -43,23 +42,77 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="theme-color" content="#1a2a1f" />
 
-  <!-- ===== ПОДКЛЮЧЕНИЕ ШРИФТОВ ===== -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <!-- ===== ИКОНКИ (ТОЛЬКО ОДНА ПРАВИЛЬНАЯ) ===== -->
+  <link rel="icon" type="image/png" href="/vpk-logo.png" />
+  <link rel="apple-touch-icon" href="/vpk-logo.png" />
 
-  <!-- ===== ПРЕДЗАГРУЗКА КРИТИЧЕСКИХ РЕСУРСОВ ===== -->
+  <!-- ===== ШРИФТЫ ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
-  <!-- ===== CANONICAL URL ===== -->
+  <!-- ===== КАНОНИЧЕСКАЯ ССЫЛКА ===== -->
   <link rel="canonical" href="https://vpk-muzhestvo.vercel.app/" />
 
+  <!-- ===== СТРУКТУРИРОВАННЫЕ ДАННЫЕ (JSON-LD) ДЛЯ ПОИСКОВЫХ СИСТЕМ ===== -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "ВПК 'Мужество'",
+      "url": "https://vpk-muzhestvo.vercel.app/",
+      "logo": "https://vpk-muzhestvo.vercel.app/vpk-logo.png",
+      "image": "https://vpk-muzhestvo.vercel.app/vpk-logo.png",
+      "description": "Военно-патриотический клуб в Октябрьском районе Минска. Тактическая подготовка, работа с оружием, БПЛА, тренажёры, строевая подготовка.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Минск",
+        "addressRegion": "Октябрьский район",
+        "addressCountry": "BY"
+      },
+      "sameAs": [
+        "https://t.me/shool30_info",
+      ]
+    }
+  </script>
 
-  <meta name="yandex-verification" content="942c283d89752627" />
+  <!-- ===== GOOGLE ANALYTICS (ОПЦИОНАЛЬНО, ЗАМЕНИ ID НА СВОЙ) ===== -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
 </head>
 
 <body>
+  <!-- FALLBACK-КОНТЕНТ ДЛЯ SEO (ВИДЕН, ЕСЛИ ОТКЛЮЧЁН JS) -->
+  <noscript>
+    <div style="padding: 40px 20px; max-width: 800px; margin: 0 auto; font-family: Arial, sans-serif;">
+      <h1>Военно-патриотический клуб «Мужество»</h1>
+      <p>Добро пожаловать на сайт ВПК «Мужество»! Для полноценной работы сайта включите JavaScript в вашем браузере.</p>
+      <h2>О нас</h2>
+      <p>ВПК «Мужество» создан 2 ноября 2022 года в Октябрьском районе Минска. Мы занимаемся тактической подготовкой,
+        изучаем оружие, БПЛА, тренажёры, проводим военно-патриотические игры и воспитываем защитников Отечества.</p>
+      <h2>Контакты</h2>
+      <p>📞 +375 (29) 123-45-67<br>✉️ muzhestvo@octobrrb.by<br>📍 г. Минск, Октябрьский район, ул. Аэродромная, д. 30
+        (СШ №30)</p>
+      <h2>Ссылки</h2>
+      <ul>
+        <li><a href="/">Главная страница</a></li>
+        <li><a href="/news">Новости</a></li>
+        <li><a href="/gallery">Галерея</a></li>
+        <li><a href="/rules">Правила и документы</a></li>
+        <li><a href="/register">Записаться</a></li>
+      </ul>
+    </div>
+  </noscript>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
