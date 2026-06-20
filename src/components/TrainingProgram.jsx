@@ -6,7 +6,7 @@ function TrainingProgram() {
 
 	const bases = {
 		school30: {
-			name: 'СШ №30 г.Минска (базовая)',
+			name: 'СШ №30 г.Минска',
 			logo: '/img/IMG-5fb2e8a42027544bb94ff29c6d392cab-V.jpg',
 			items: [
 				'Неполная разборка и сборка автомата АК-74',
@@ -16,7 +16,7 @@ function TrainingProgram() {
 			],
 		},
 		pus742: {
-			name: '742 полевой узел связи (в/ч 19310) — по четвергам',
+			name: '742 полевой узел связи (в/ч 19310)',
 			logo: '/img/пус-742.png',
 			items: [
 				'Неполная разборка и сборка автомата АК-74',
@@ -83,7 +83,7 @@ function TrainingProgram() {
 							onClick={() => setActiveBase(key)}
 						>
 							<img src={bases[key].logo} alt={bases[key].name} className='base-logo' />
-							{bases[key].name.split(' ')[0]} {bases[key].name.split(' ')[1]}
+							{bases[key].name}
 						</button>
 					))}
 				</div>

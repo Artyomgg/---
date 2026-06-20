@@ -490,10 +490,11 @@ body {
 .base-tab {
 	background: var(--bg-card);
 	border: 1px solid var(--border-medium);
-	padding: 10px 24px;
+	padding: 6px 24px;
 	border-radius: 60px;
 	color: var(--text-secondary);
 	cursor: pointer;
+	font-size: 15px;
 }
 .base-tab.active,
 .base-tab:hover {
