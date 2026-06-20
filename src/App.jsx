@@ -9,6 +9,8 @@ import HomePage from './pages/HomePage'
 import NewsPage from './pages/NewsPage'
 import RulesPage from './pages/RulesPage'
 import './styles/App.css'
+import NotFoundPage from './components/NotFoundPage'
+import AdminRoute from './components/AdminRoute'
 
 function App() {
 	return (
@@ -20,7 +22,8 @@ function App() {
 				<Route path='/news' element={<NewsPage />} />
 				<Route path='/gallery' element={<GalleryPage />} />
 				<Route path='/rules' element={<RulesPage />} />
-				<Route path='/admin' element={<AdminPanel />} />
+				<Route path="/admin" element={<AdminRoute />} /> {/* Защищённый маршрут */}
+				<Route path='*' element={<NotFoundPage />} />
 			</Routes>
 			<Footer />
 		</div>

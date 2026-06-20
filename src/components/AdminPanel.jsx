@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { fetchAboutText, fetchGallery, fetchNews } from '../services/googleSheets'
 
-function AdminPanel() {
+function AdminPanel({ onLogout }) {
 	const [news, setNews] = useState([])
 	const [gallery, setGallery] = useState([])
 	const [aboutText, setAboutText] = useState({})
@@ -40,7 +40,9 @@ function AdminPanel() {
 		<div className='admin-panel'>
 			<div className='container'>
 				<h1>📋 Панель управления</h1>
-
+				<button onClick={onLogout} className='admin-logout-btn'>
+					Выйти
+				</button>
 				<div className='admin-info'>
 					<p>
 						📊 <strong>Google Таблица:</strong>{' '}
